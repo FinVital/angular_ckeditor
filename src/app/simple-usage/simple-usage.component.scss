@@ -1,0 +1,14 @@
+/**
+ * @license Copyright (c) 2003-2022, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md.
+ */
+
+:host ::ng-deep .ck.ck-editor__editable:not([contenteditable]) {
+	background: #fafafa;
+	color: #888;
+}
+
+
+:host ::ng-deep .ck-editor__editable_inline {
+    min-height: 1200px !important;
+}

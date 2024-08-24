@@ -1,0 +1,25 @@
+<div *ngFor="let editor of editors">
+	<h3>{{ editor }} Editor:</h3>
+	<ckeditor
+	editorUrl="https://cdn.ckeditor.com/4.14.0/full/ckeditor.js"
+	*ngIf="!isRemoved"
+		[readOnly]="isReadOnly"
+		[hidden]="isHidden"
+		[(ngModel)]="editorData"
+		[config]="ckEditorConfig"
+		(ready)="onReady( $event, editor )"
+		(change)="onChange( $event, editor )"
+		(focus)="onFocus( $event, editor )"
+		(blur)="onBlur( $event, editor )"
+		(paste)="onPaste( $event, editor )"
+		(afterPaste)="onAfterPaste( $event, editor )"
+		(dragStart)="onDragStart( $event, editor )"
+		(dragEnd)="onDragEnd( $event, editor )"
+		(drop)="onDrop( $event, editor )"
+		(fileUploadRequest)="onFileUploadRequest( $event, editor )"
+		(fileUploadResponse)="onFileUploadResponse( $event, editor )"
+		(namespaceLoaded)="onNamespaceLoaded( $event, editor )"
+	></ckeditor>
+</div>
+
+<button (click)="submit()">Submit</button>
